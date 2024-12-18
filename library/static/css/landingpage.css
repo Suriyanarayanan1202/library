@@ -1,0 +1,44 @@
+/* Style for the action button container */
+.action_button {
+    text-align: top; /* Center the buttons */
+    padding:15px; /* Add some padding around the buttons */
+}
+
+/* Style for the buttons within the action_button class */
+.action_button button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 8px 12px; /* Padding for the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    height: 30px;
+}
+
+/* Change background color on hover */
+.action_button button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+/* Style for the delete button */
+.action_button a:nth-child(2) button {
+    background-color: #dc3545; /* Bootstrap danger color */
+}
+
+.action_button a:nth-child(2) button:hover {
+    background-color: #c82333; /* Darker shade for delete button on hover */
+}
+
+.issue_button{
+    background-color: blueviolet;
+    border-radius: 5px;
+}
+.issue_button:hover{
+    background-color: palevioletred;
+    color: black;
+}
+.not_available{
+    background-color: red;
+    color: black;
+  }

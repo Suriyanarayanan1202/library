@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block suriya %}
+
+<link rel="stylesheet" href="{% static 'css/addpage.css' %}">
+
+<center><h1>Add Books Here</h1></center>
+
+{% if messages %}
+<div class="message" style="width: 100px; color: white;  " >
+    {% for message in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+</div>
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+
+    {{addbooks}}
+
+    <input type="submit">
+</form>
+
+<a href="/"><button>Back</button></a>
+
+
+{% endblock %}

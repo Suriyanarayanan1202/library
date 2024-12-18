@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block suriya %}
+
+<link rel="stylesheet" href="{% static 'css/addpage.css' %}">
+
+<center><h1>Add Customer</h1></center>
+
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+
+        {{addcustomer}}
+
+        <input type="submit">
+    </form>
+</div>
+
+<a href="/"><button>Back</button></a>
+<a href="/customerlist/"><button>Member List</button></a>
+
+{% endblock %}

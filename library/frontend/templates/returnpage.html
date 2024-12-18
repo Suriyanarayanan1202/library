@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block suriya %}
+
+<center><h1>Return Book</h1></center>
+
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="book">Select Book:</label>
+            {{ book }}
+        </div>
+        
+        <div class="form-group">
+            <label for="member">Select Member:</label>
+            {{ member }}
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Return Book</button>
+    </form>
+</div>
+
+{% endblock %}
+
+<style>
+    .container {
+        height: 500px;
+        width: 500px;
+        margin: auto; /* Center the container */
+        padding: 20px; /* Add some padding */
+        border: 1px solid #ccc; /* Optional: Add a border */
+        border-radius: 5px; /* Optional: Rounded corners */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+    }
+    .form-group {
+        margin-bottom: 15px; /* Space between form groups */
+    }
+    .btn {
+        width: 100%; /* Full width button */
+    }
+</style>

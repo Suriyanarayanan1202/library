@@ -1,0 +1,34 @@
+{% load static %}
+
+{% block suriya %}
+
+<link rel="stylesheet" href="{% static 'css/issuepage.css' %}">
+
+<div class="container">
+    <form method="POST">
+        <center><h1>Issue Page </h1></center>
+        {% csrf_token %}
+        <!-- {{readbook.title}} -->
+        <div>
+            <label style="margin-left: 250px;" for="Book Title">Book Title</label>
+            <br>
+            <input type="text" name="memeber_name" value="{{readbook.title}}" style="margin-right: 100px;" disabled>
+            <br>
+            <label style="margin-left: 220px;">Select Customer</label>
+            <br>
+                <select name="member_id" id="" required>
+                    <option >select the customer</option>
+                    {% for i in member %}
+                    <option value="{{i.id}}">{{i.fullname}}</option>
+                    {% endfor %}
+                </select>
+            
+        </div>
+        <a href=""><button style="margin-left: 200px;width: 200px;">Issue Book</button></a>
+    </form>
+    <a href="/"><button style="margin-left: 250px;">Back</button></a>
+</div>
+
+<a href="/"><button>Back</button></a>
+
+{% endblock %}

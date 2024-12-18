@@ -1,0 +1,26 @@
+{% extends  'base.html' %}
+
+
+{% block suriya %}
+<center><h1>Customer List</h1></center>
+
+<table class="table table-dark table-striped-columns">
+    <tr>
+        <th>Full Name</th>
+        <th>E-Mail</th>
+        <th>Update Customer</th>
+        <th>Delete Customer</th>
+    </tr>
+    {% for i in customerviewlist %}
+    <tr>
+        <td>{{i.fullname}}</td>
+        <td>{{i.email}}</td>
+        <td><a href="{% url 'update_customer' i.id %}"><button>Update</button></a></td>
+        <td><a href="{% url 'deletecust' i.id %}"><button>Delete</button></a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="/addcustomer/"><button>Add Customer</button></a>
+
+{% endblock %}

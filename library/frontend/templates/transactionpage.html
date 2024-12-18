@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block suriya %}
+
+<center><h1>Transcation List</h1></center>
+
+<div class="container-fluid">
+    <table class="table table-striped">
+        <tr>
+            <th>Book Name</th>
+            <th>Member Name</th>
+            <th>Issue Date</th>
+            <th>Return Date</th>
+            <th>Amount</th>
+        </tr>
+        {% for i in listoftranscation %}
+        <tr>
+            <td>{{i.book}}</td>
+            <td>{{i.customer}}</td>
+            <td>{{i.issue_date}}</td>
+            <td>{{i.return_date}}</td>
+            <td>{{i.fee}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<a href="/"><button>Back</button></a>
+
+
+{% endblock %}
